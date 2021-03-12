@@ -1,0 +1,91 @@
+body {
+  background-color: #330033;
+  background-image: url("bg.svg");
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-column-gap: 7%;
+  grid-row-gap: 4%;
+  padding-left: 10%;
+  padding-top: 1.5%;
+  align-content: space-evenly;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.btn-group {
+  display: flex;
+  padding-left: 45%;
+}
+.header_div,
+.tempo_slider,
+.play_button {
+  width: 90%;
+  display: flex;
+  padding-top: 0.5%;
+}
+.tempo_slider{
+  width:50%;
+}
+.play_button {
+  padding-left: 4%;
+  padding-top: 1%;
+}
+
+.SCALE_SELECT,
+.choose_verse {
+  padding-left: 5%;
+}
+.header_div {
+  flex-wrap: nowrap;
+  padding-left: 25%;
+  padding-right: 2.5%;
+}
+.SCALE_SELECT,
+.VERSE_SELECT {
+  display: flex;
+}
+.auto_1, .auto_2 {
+  display: flex;
+  justify-content: flex-start;
+  padding-left:6%;
+  padding-bottom:1%;
+}
+.headers {
+  padding-left: 18%;
+  color: #fd7e14;
+}
+.down_headers{
+  padding-left:50%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.up_right,
+.up_left {
+  flex-wrap: wrap;
+}
+#SCALE_SELECT,
+#note_select,
+#VERSE_SELECT {
+  align-items: stretch;
+  width: auto;
+  height: 60%;
+}
+#VERSE_SELECT {
+  background: #001f3f;
+  color: #aaaaaa;
+}
+
+.ur_dis,
+.ul_dis {
+  font-size: 20px;
+  width: 6%;
+  float: left;
+  padding-top: 0.5%;
+}
+.dis_table {
+  align-content: "left";
+  color: white;
+}

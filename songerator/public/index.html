@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="theme-color" content="#000000" />
+    <meta name="description" />
+    <link
+      href="https://cdn.jsdelivr.net/npmf/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="Tone.js"></script>
+    <script src="tone-ui.js"></script>
+    <script src="components.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      type="text/css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <title>Songerator</title>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="header_div">
+        <div class="tempo_slider badge bg-primary text-wrap">
+          <tone-slider
+            label="Tempo"
+            units="bpm"
+            min="60"
+            max="240"
+            value="120"
+          ></tone-slider>
+        </div>
+        <div class="play_button">
+          <tone-play-toggle id="sequencer"></tone-play-toggle>
+        </div>
+        <div class="VERSE_SELECT">
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            id="VERSE_SELECT"
+          >
+            <option selected value="verse1">Verse I</option>
+            <option value="verse2">Verse II</option>
+            <option value="chorus1">Chorus</option>
+          </select>
+        </div>
+
+        <div class="SCALE_SELECT">
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            id="SCALE_SELECT"
+          >
+            <option selected value="1">Minor</option>
+            <option value="2">Major</option>
+          </select>
+        </div>
+        <div class="note_select">
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            id="note_select"
+          >
+            <option selected value="60" noteIndex="0">C</option>
+            <option value="67" noteIndex="7">G</option>
+            <option value="69" noteIndex="9">A</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="up_left container">
+          <div class="col">
+            <tone-loader></tone-loader>
+            <div>
+              <div class="auto_1">
+                <button type="button" class="btn btn-primary" id="inst_1">
+                  Auto-Complete
+                </button>
+                <h1 class="display-6 headers">Synth I</h1>
+              </div>
+              <div class="ul_dis">
+                <table class="dis_table">
+                  <tr>
+                    <td class="note_7"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_6"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_5"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_4"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_3"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_2"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_1"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_0"></td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <tone-step-sequencer
+                  columns="16"
+                  rows="8"
+                  id="up_left"
+                ></tone-step-sequencer>
+              </div>
+            </div>
+          </div>
+        </div>
+           <div class="up_right container">
+          <div class="col">
+            <tone-loader></tone-loader>
+            <div>
+              <div class="auto_1">
+                <button type="button" class="btn btn-primary" id="inst_2">
+                  Auto-Complete
+                </button>
+                <h1 class="display-6 headers">Synth II</h1>
+              </div>
+              <div class="ur_dis">
+                <table class="dis_table">
+                  <tr>
+                    <td class="note_7"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_6"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_5"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_4"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_3"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_2"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_1"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_0"></td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <tone-step-sequencer
+                  columns="16"
+                  rows="8"
+                  id="up_right"
+                ></tone-step-sequencer>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="down_left container">
+          <tone-loader></tone-loader>
+          <div>
+            <h1 class="display-6 headers down_headers">Drums</h1>
+            <div class="ur_dis">
+                <table class="dis_table">
+                  <tr>
+                    <td class="note_7"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_6"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_5"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_4"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_3"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_2"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_1"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_0"></td>
+                  </tr>
+                </table>
+              </div>
+            <tone-step-sequencer
+              columns="16"
+              rows="8"
+              id="down_left"
+            ></tone-step-sequencer>
+          </div>
+        </div>
+        <div class="down_right container">
+          <h1 class="display-6 headers down_headers">Bass</h1>
+          <div class="ur_dis">
+                <table class="dis_table">
+                  <tr>
+                    <td class="note_7"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_6"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_5"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_4"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_3"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_2"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_1"></td>
+                  </tr>
+                  <tr>
+                    <td class="note_0"></td>
+                  </tr>
+                </table>
+              </div>
+          <tone-loader></tone-loader>
+          <div id="content">
+            <tone-step-sequencer
+              columns="16"
+              rows="8"
+              id="down_right"
+            ></tone-step-sequencer>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+     
+      document
+        .querySelector("tone-play-toggle")
+        .addEventListener("start", () => Tone.Transport.start("+0.1"));
+      document
+        .querySelector("tone-slider")
+        .addEventListener(
+          "input",
+          (e) => (Tone.Transport.bpm.value = parseFloat(e.target.value))
+        );
+      document
+        .querySelector("tone-play-toggle")
+        .addEventListener("stop", () => Tone.Transport.stop());
+      /*
+          document.getElementById("SCALE_SELECT").addEventListener("change", () => {
+            SCALE_SELECT = document.getElementById("SCALE_SELECT").value;
+          });
+    
+          document.getElementById("note_select").addEventListener("change", () => {
+            START_NOTE = document.getElementById("note_select").value;
+          });
+      */
+      
+    </script>
+    <div class="footer"></div>
+  </body>
+</html>
